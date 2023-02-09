@@ -4,6 +4,10 @@ from django.contrib.auth.models import User
 
 
 class Address(models.Model):
+
+    #class Meta:
+        #db_table = 'Adresses'
+
     number = models.PositiveIntegerField(validators=[MaxValueValidator(9999)])
     street = models.CharField(max_length=64)
     city = models.CharField(max_length=64)
