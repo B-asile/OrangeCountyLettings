@@ -10,6 +10,7 @@ jobs:
       - image: cimg/python:3.9.1
     environment:
       PYTHONPATH: "${PYTHONPATH}:$PWD/project"
+      DJANGO_SETTINGS_MODULE: project.settings
     steps:
       - checkout
       - python/install-packages:
