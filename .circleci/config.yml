@@ -7,7 +7,9 @@ orbs:
 jobs:
   run-tests:
     docker:
-      - image: cimg/python:3.10.2
+      - image: cimg/python:3.9.1
+    environment:
+      PYTHONPATH: "${PYTHONPATH}:$PWD/project"
     steps:
       - checkout
       - python/install-packages:
