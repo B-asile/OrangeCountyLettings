@@ -12,7 +12,6 @@ jobs:
       - checkout
       - python/install-packages:
           pkg-manager: pip
-      - run: mkdir src/staticfiles
       - run: flake8
       - run: pytest
   build-docker-image:
