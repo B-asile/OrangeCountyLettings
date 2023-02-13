@@ -27,7 +27,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'oc_lettings_site',
     'lettings',
     'profiles',
 ]
