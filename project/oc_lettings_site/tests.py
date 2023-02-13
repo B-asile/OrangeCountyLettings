@@ -5,6 +5,7 @@ from django.urls import reverse
 def test_dummy():
     assert 1
 
+
 class OcLettingsSiteTest(TestCase):
 
     def test_index(self):
