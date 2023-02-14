@@ -41,7 +41,7 @@ jobs:
               HEROKU_API_KEY=${HEROKU_API_KEY} heroku container:login
               HEROKU_API_KEY=${HEROKU_API_KEY} heroku container:push -a orangecountylettings web
               HEROKU_API_KEY=${HEROKU_API_KEY} heroku container:release -a orangecountylettings web
-              HEROKU_API_KEY=${HEROKU_API_KEY} heroku config:set SENTRY_DSN=$SENTRY_DSN -a $HEROKU_APP_NAME
+              HEROKU_API_KEY=${HEROKU_API_KEY} heroku config:set SENTRY_DSN=$SENTRY_DSN -a orangecountylettings web
 
 
 workflows:
