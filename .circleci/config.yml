@@ -17,18 +17,18 @@ jobs:
   build-docker-image:
     docker:
       - image: "cimg/python:3.9.1"
-      resource_class: medium
-      steps:
-        - checkout
-        - setup_remote_docker
-        - run:
-            name: Send Image to Docker Hub
-            command: |
-              echo "$DOCKER_PASS" | docker login --username $DOCKER_USER --password-stdin
-              docker build -t $DOCKER_USER/orange_county_lettings:latest .
-              docker tag $DOCKER_USER/orange_county_lettings:latest $DOCKER_USER/orange_county_lettings:$CIRCLE_SHA1
-              docker push $DOCKER_USER/orange_county_lettings:$CIRCLE_SHA1
-              docker push $DOCKER_USER/orange_county_lettings:latest
+    resource_class: medium
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Send Image to Docker Hub
+          command: |
+            echo "$DOCKER_PASS" | docker login --username $DOCKER_USER --password-stdin
+            docker build -t $DOCKER_USER/orange_county_lettings:latest .
+            docker tag $DOCKER_USER/orange_county_lettings:latest $DOCKER_USER/orange_county_lettings:$CIRCLE_SHA1
+            docker push $DOCKER_USER/orange_county_lettings:$CIRCLE_SHA1
+            docker push $DOCKER_USER/orange_county_lettings:latest
 
   deploy-on-heroku:
     executor: heroku/default
