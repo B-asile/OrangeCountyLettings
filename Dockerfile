@@ -11,7 +11,7 @@ COPY requirements.txt .
 RUN pip install --upgrade pip && pip install -r requirements.txt
 
 # Copier le code source de votre application dans le conteneur
-COPY .
+COPY . .
 
 # Définir le port sur lequel votre application Django écoutera
 EXPOSE 8000
