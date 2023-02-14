@@ -4,7 +4,7 @@ services:
     image: orange_county_lettings
     container_name: oc_lettings
     build:
-      context: .
+      context: . .
       dockerfile: Dockerfile
     ports:
       - 8000:8000
