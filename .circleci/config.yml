@@ -28,7 +28,6 @@ jobs:
             docker build -t $DOCKER_USER/orange_county_lettings:latest .
             docker tag $DOCKER_USER/orange_county_lettings:latest $DOCKER_USER/orange_county_lettings:$CIRCLE_SHA1
             docker push $DOCKER_USER/orange_county_lettings:$CIRCLE_SHA1
-            docker push $DOCKER_USER/orange_county_lettings:latest
   deploy-on-heroku:
     executor: heroku/default
     steps:
