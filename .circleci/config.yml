@@ -41,7 +41,6 @@ jobs:
               HEROKU_API_KEY=${HEROKU_API_KEY} heroku container:login
               HEROKU_API_KEY=${HEROKU_API_KEY} heroku container:push -a orangecountylettings web
               HEROKU_API_KEY=${HEROKU_API_KEY} heroku container:release -a orangecountylettings web
-              HEROKU_API_KEY=${HEROKU_API_KEY} heroku run python manage.py migrate -a orangecountylettings
 
 
 workflows:
