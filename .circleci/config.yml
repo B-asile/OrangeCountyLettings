@@ -31,17 +31,17 @@ jobs:
             docker push $DOCKER_USER/orange_county_lettings:lasted
   deploy-on-heroku:
     machine: true
-      steps:
-          - checkout
-            - run:
-            name: Build and push Docker image to Heroku
-            command: |
-              set -x
-              sudo curl https://cli-assets.heroku.com/install.sh | sh
-              HEROKU_API_KEY=${HEROKU_API_KEY} heroku container:login
-              HEROKU_API_KEY=${HEROKU_API_KEY} heroku container:push -a orangecountylettings web
-              HEROKU_API_KEY=${HEROKU_API_KEY} heroku container:release -a orangecountylettings web
-              HEROKU_API_KEY=${HEROKU_API_KEY} heroku run python manage.py migrate -a orangecountylettings 
+    steps:
+        - checkout
+        - run:
+        name: Build and push Docker image to Heroku
+        command: |
+          set -x
+          sudo curl https://cli-assets.heroku.com/install.sh | sh
+          HEROKU_API_KEY=${HEROKU_API_KEY} heroku container:login
+          HEROKU_API_KEY=${HEROKU_API_KEY} heroku container:push -a orangecountylettings web
+          HEROKU_API_KEY=${HEROKU_API_KEY} heroku container:release -a orangecountylettings web
+          HEROKU_API_KEY=${HEROKU_API_KEY} heroku run python manage.py migrate -a orangecountylettings 
 
 
 workflows:
