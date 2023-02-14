@@ -5,5 +5,7 @@ from django.core.wsgi import get_wsgi_application
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'oc_lettings_site.settings')
 
 application = get_wsgi_application()
-port = int(os.environ.get("PORT", 8000))
-application.listen(port)
+
+bind = f"0.0.0.0:{os.environ.get('PORT', 8000)}"
+workers = 1
+timout = 120
