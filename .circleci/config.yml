@@ -60,7 +60,7 @@ workflows:
               only: master
       - deploy-on-heroku:
           requires:
-            - build-docker-image
+            - build-docker-image-publish
           filters:
             branches:
               only: master
